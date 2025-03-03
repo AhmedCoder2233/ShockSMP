@@ -1,18 +1,17 @@
-import { NextResponse } from "next/server";
 import { sendEmail } from "@/components/utils/nodemailer";
 
-export async function POST(req: Request) {
+export async function POST(request:any) {
+  const { to, subject, text } = await request.json();
+
   try {
-    const { to, subject, html } = await req.json();
-
-    if (!to || !subject || !html) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
-    }
-
-    await sendEmail(to, subject, html);
-    return NextResponse.json({ message: "Email sent successfully!" });
+    await sendEmail(to, subject, text);
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+    });
   } catch (error) {
-    console.error("Email send error:", error);
-    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+    console.error("Error sending email:", error);
+    return new Response(JSON.stringify({ success: false }), {
+      status: 500,
+    });
   }
 }
