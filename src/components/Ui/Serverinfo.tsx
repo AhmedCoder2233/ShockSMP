@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from "react";
 
 // Utility function to remove Minecraft formatting codes
 const removeFormattingCodes = (text: string): string => {
-  return text.replace(/§[0-9a-fk-or]/g, '');
+  return text.replace(/§[0-9a-fk-or]/g, "");
 };
 
 type ServerStatusResponse = {
@@ -26,13 +26,13 @@ const ServerStatusSection = () => {
 
   const fetchServerData = async () => {
     try {
-      const response = await fetch('/api/serverstatus');
+      const response = await fetch("/api/serverstatus");
       const data: ServerStatusResponse = await response.json();
 
       // Clean up player names
       const cleanedPlayers = data.players
-        .map(player => removeFormattingCodes(player))
-        .filter(player => !player.includes("Welcome back"));
+        .map((player) => removeFormattingCodes(player))
+        .filter((player) => !player.includes("Welcome back"));
 
       // Update state
       setServerStatus(data.status);
@@ -100,7 +100,7 @@ const ServerStatusSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
           viewport={{ once: false }}
-          className="inline-block bg-blue-800/50 backdrop-blur-md rounded-xl p-8 shadow-2xl border border-blue-700/50"
+          className="inline-block bg-blue-800/50 backdrop-blur-md rounded-xl p-8 shadow-2xl border border-blue-700/50 max-w-2xl w-full"
         >
           {/* Server Status Indicator */}
           <div className="flex items-center justify-center gap-4 mb-6">
@@ -140,22 +140,36 @@ const ServerStatusSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2 }}
             viewport={{ once: false }}
-            className="text-2xl font-bold text-yellow-400 mb-6"
+            className="text-xl font-bold text-yellow-400 mb-4"
           >
             Welcome to Shock SMP!
           </motion.p>
 
-          {/* Player Count */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.5 }}
-            viewport={{ once: false }}
-            className="text-3xl font-bold text-yellow-400 mb-6"
-          >
-            {players}
-          </motion.p>
 
+          {/* Online Players */}
+          {players.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.8 }}
+              viewport={{ once: false }}
+              className="mb-6"
+            >
+              <p className="text-lg font-bold text-gray-300 mb-2">
+                Online Players:
+              </p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {players.map((player, index) => (
+                  <span
+                    key={index}
+                    className="bg-blue-700/50 px-3 py-1 rounded-lg text-sm text-gray-200"
+                  >
+                    {player}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          )}
 
           {/* Server IP and Discord Link */}
           <motion.div
