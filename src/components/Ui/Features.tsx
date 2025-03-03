@@ -9,24 +9,24 @@ const FeaturesSection = () => {
 
   const features = [
     {
-      icon: "⚔️",
-      title: "Epic PvP Arenas",
-      description: "Challenge your friends in our custom-built PvP arenas with unique mechanics and rewards.",
+      icon: "🍂",
+      title: "Dynamic Seasons",
+      description: "Experience the changing seasons with unique weather, crops, and events throughout the year.",
     },
     {
-      icon: "🏰",
-      title: "Massive Custom Worlds",
-      description: "Explore vast, hand-crafted worlds filled with secrets, dungeons, and adventures.",
+      icon: "🌍",
+      title: "Vanilla+ World Generator",
+      description: "Explore a beautifully enhanced world with custom terrain generation that stays true to the vanilla experience.",
     },
     {
-      icon: "🎮",
-      title: "Enjoy Building",
-      description: "Enjoy a variety of Building like House, Farms and more for endless fun.",
+      icon: "🏡",
+      title: "Community Builds",
+      description: "Collaborate with others to create stunning towns, farms, and projects in a friendly and welcoming environment.",
     },
     {
       icon: "👥",
-      title: "Friendly Community",
-      description: "Join a welcoming and active community of players from around the world.",
+      title: "Active Community",
+      description: "Join a vibrant and supportive community of players who love Minecraft as much as you do.",
     },
   ];
 
