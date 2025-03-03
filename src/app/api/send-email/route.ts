@@ -1,21 +1,18 @@
-// components/utils/nodemailer.ts
-import nodemailer from "nodemailer";
+import { NextResponse } from "next/server";
+import { sendEmail } from "@/components/utils/nodemailer";
 
-const transporter = nodemailer.createTransport({
-  service: "gmail", // Use your email service
-  auth: {
-    user: process.env.EMAIL_USER, // Your email
-    pass: process.env.EMAIL_PASSWORD, // Your email password or app password
-  },
-});
+export async function POST(req: Request) {
+  try {
+    const { to, subject, html } = await req.json();
 
-export const sendEmail = async (to: string, subject: string, html: string) => {
-  const mailOptions = {
-    from: process.env.EMAIL_USER, // Sender email
-    to, // Recipient email
-    subject, // Email subject
-    html, // Email content (HTML)
-  };
+    if (!to || !subject || !html) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
 
-  await transporter.sendMail(mailOptions);
-};
+    await sendEmail(to, subject, html);
+    return NextResponse.json({ message: "Email sent successfully!" });
+  } catch (error) {
+    console.error("Email send error:", error);
+    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+  }
+}
