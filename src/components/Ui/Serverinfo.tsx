@@ -145,6 +145,16 @@ const ServerStatusSection = () => {
             Welcome to Shock SMP!
           </motion.p>
 
+          {/* Player Count */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            viewport={{ once: false }}
+            className="text-lg font-bold text-gray-300 mb-6"
+          >
+            Currently {playerCount}/75 players online.
+          </motion.p>
 
           {/* Online Players */}
           {players.length > 0 && (
