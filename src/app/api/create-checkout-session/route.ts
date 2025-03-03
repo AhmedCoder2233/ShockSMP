@@ -44,8 +44,8 @@ export async function POST(request: Request) {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/shop`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}success`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}shop`,
       metadata: {
         email,
         username,
