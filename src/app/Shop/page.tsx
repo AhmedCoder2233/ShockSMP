@@ -2,7 +2,6 @@
 
 import { useUser } from "@clerk/nextjs";
 import { useState } from "react";
-import { loadStripe } from "@stripe/stripe-js";
 import { FaShoppingCart } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -198,45 +197,7 @@ export default function ShopPage() {
     setError("");
   }, 5000);
 
-  const handlePayment = async () => {
-    if (!cart.length) {
-      setError("Your cart is empty.");
-      return;
-    }
-  
-    const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
-  
-    try {
-      const payload = {
-        cart,
-        email: user?.primaryEmailAddress?.emailAddress,
-        username: user?.username || user?.fullName || "Unknown User", // Pass username or fallback
-      };
-      console.log("Payload:", payload);
-  
-      const response = await fetch("/api/create-checkout-session", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-  
-      if (!response.ok) {
-        throw new Error("Failed to create checkout session.");
-      }
-  
-      const session = await response.json();
-      if (stripe) {
-        await stripe.redirectToCheckout({ sessionId: session.id });
-      } else {
-        console.error("Stripe is not initialized.");
-      }
-    } catch (error) {
-      setError("An error occurred. Please try again.");
-      console.error(error);
-    }
-  };
+
 
   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -298,7 +259,6 @@ export default function ShopPage() {
             ))}
             <p className="text-lg font-semibold">Total: ${totalPrice}</p>
             <button
-              onClick={handlePayment}
               className="w-full p-3 bg-yellow-400 text-blue-900 font-semibold rounded-lg hover:bg-yellow-500 transition-colors duration-300 mt-4"
             >
               Proceed to Payment
