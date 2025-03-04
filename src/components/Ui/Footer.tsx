@@ -58,7 +58,7 @@ const Footer = () => {
           viewport={{ once: false }}
           className="text-lg text-gray-300"
         >
-          &copy; {new Date().getFullYear()} Shock SMP. All rights reserved.
+          &copy; {new Date().getFullYear()} Shark SMP. All rights reserved.
         </motion.p>
       </div>
     </footer>

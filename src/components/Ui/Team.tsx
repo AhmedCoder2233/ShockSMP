@@ -12,12 +12,12 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "ShockSMP",
+    name: "SharkSMP",
     role: "Owner",
     image: "/skin1.png", // Replace with the actual image path
   },
   {
-    name: "X_Professor_YT",
+    name: "T_Jackson_KL",
     role: "Manager",
     image: "/skin2.png", // Replace with the actual image path
   },

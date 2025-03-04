@@ -16,7 +16,7 @@ const RulesPage = () => {
         >
           <h1 className="text-5xl font-bold mb-4 flex items-center justify-center gap-2">
             <FaExclamationCircle className="text-yellow-400" />
-            The ShockSMP Rules
+            The SharkSMP Rules
           </h1>
           <p className="text-lg text-gray-300">
             Be sure to carefully read them to avoid consequences.

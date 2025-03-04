@@ -41,7 +41,7 @@ const Header = () => {
           className="flex items-center"
         >
           <Image
-            src="/shock.png" // Replace with your logo path
+            src="/shark.png" // Replace with your logo path
             alt="ShockSMP Logo"
             width={60}
             height={60}

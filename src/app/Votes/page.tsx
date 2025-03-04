@@ -8,13 +8,13 @@ const VoteSection = () => {
   const voteSites = [
     { name: "MinecraftServers.org", link: "https://minecraftservers.org/vote/669774" },
     { name: "Minecraft Buzz", link: "https://minecraft.buzz/" },
-    { name: "Minecraft-Server.net", link: "https://minecraft-server.net/vote/ShockSMP/" },
-    { name: "PlayMinecraftServers.com", link: "https://play-minecraft-servers.com/minecraft-servers/shocksmp/?tab=vote" },
-    { name: "MinecraftBestServers.com", link: "https://minecraftbestservers.com/server-shocksmp-survival.4368/vote" },
-    { name: "Minecraft.menu", link: "https://minecraft.menu/server-shocksmp.4193/vote" },
+    { name: "Minecraft-Server.net", link: "https://minecraft-server.net/vote" },
+    { name: "PlayMinecraftServers.com", link: "https://play-minecraft-servers.com/minecraft-servers/" },
+    { name: "MinecraftBestServers.com", link: "https://minecraftbestservers.com/" },
+    { name: "Minecraft.menu", link: "https://minecraft.menu/" },
     { name: "Minecraft Server List", link: "https://minecraft-server-list.com/ "},
-    { name: "Minecraft MP", link: "https://minecraft-mp.com/server-s340915" },
-    { name: "Best Minecraft Servers", link: "https://best-minecraft-servers.co/server-shocksmp-survival.27351/vote" },
+    { name: "Minecraft MP", link: "https://minecraft-mp.com/" },
+    { name: "Best Minecraft Servers", link: "https://best-minecraft-servers.co/" },
     { name: "Minecraft-ServerList", link: "https://minecraft-serverlist.com/server/2267/vote" },
   ];
 
@@ -30,7 +30,7 @@ const VoteSection = () => {
         >
           <h1 className="text-5xl font-bold mb-4 flex items-center justify-center gap-2">
             <FaVoteYea className="text-yellow-400" />
-            Vote for ShockSMP
+            Vote for SharkSMP
           </h1>
           <p className="text-lg text-gray-300">
             Help us grow by voting on these platforms!

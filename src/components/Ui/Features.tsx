@@ -70,7 +70,7 @@ const FeaturesSection = () => {
           viewport={{ once: false }}
           className="text-4xl md:text-5xl font-bold text-white mb-12"
         >
-          Why Choose Shock SMP?
+          Why Choose Shark SMP?
         </motion.h2>
 
         {/* Features Grid */}

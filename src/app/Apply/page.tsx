@@ -74,7 +74,7 @@ const ApplyPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-5xl font-bold mb-4">Apply to Join ShockSMP</h1>
+          <h1 className="text-5xl font-bold mb-4">Apply to Join SharkSMP</h1>
           <p className="text-lg text-gray-300">
             Application Status: <span className="text-red-500">CLOSED</span>
           </p>

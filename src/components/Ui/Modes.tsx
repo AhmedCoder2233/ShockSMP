@@ -49,7 +49,7 @@ const SurvivalSection = () => {
           viewport={{ once: false }}
           className="text-5xl md:text-6xl font-bold text-white mb-6"
         >
-          Shock SMP Released!
+          Shark SMP Released!
         </motion.h2>
 
         {/* Subheading - Survival Mode */}
@@ -175,7 +175,7 @@ const SurvivalSection = () => {
             whileTap={{ scale: 0.9 }}
             className="px-8 py-4 bg-yellow-400 text-blue-900 font-bold text-xl rounded-lg hover:bg-yellow-500 transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
-            <Link href="https://discord.gg/kXuMa8cz3G">
+            <Link href="https://discord.com/">
             Join Now
             </Link>
           </motion.button>

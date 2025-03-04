@@ -142,7 +142,7 @@ const ServerStatusSection = () => {
             viewport={{ once: false }}
             className="text-xl font-bold text-yellow-400 mb-4"
           >
-            Welcome to Shock SMP!
+            Welcome to Shark SMP!
           </motion.p>
 
           {/* Player Count */}
@@ -153,33 +153,10 @@ const ServerStatusSection = () => {
             viewport={{ once: false }}
             className="text-lg font-bold text-gray-300 mb-6"
           >
-            Currently {playerCount}/75 players online.
+            Currently {playerCount}/1000 players online.
           </motion.p>
 
-          {/* Online Players */}
-          {players.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.8 }}
-              viewport={{ once: false }}
-              className="mb-6"
-            >
-              <p className="text-lg font-bold text-gray-300 mb-2">
-                Online Players:
-              </p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {players.map((player, index) => (
-                  <span
-                    key={index}
-                    className="bg-blue-700/50 px-3 py-1 rounded-lg text-sm text-gray-200"
-                  >
-                    {player}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          )}
+         
 
           {/* Server IP and Discord Link */}
           <motion.div
@@ -194,10 +171,10 @@ const ServerStatusSection = () => {
               whileTap={{ scale: 0.9 }}
               className="px-6 py-3 bg-yellow-400 text-blue-900 font-bold text-lg rounded-lg hover:bg-yellow-500 transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
-              Join Server: mc.shocksmp.com
+              Join Server: mc.sharksmp.com
             </motion.button>
             <motion.a
-              href="https://discord.gg/kXuMa8cz3G"
+              href="https://discord.com/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}

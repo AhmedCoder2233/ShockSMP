@@ -16,7 +16,7 @@ const HeroSection = () => {
   const controls = useAnimation();
 
   const handleCopyIP = () => {
-    navigator.clipboard.writeText("mc.shocksmp.com");
+    navigator.clipboard.writeText("mc.sharksmp.com");
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000);
   };
@@ -106,7 +106,7 @@ const HeroSection = () => {
           className="mb-8"
         >
           <Image
-            src="/shock.png" // Replace with your logo path
+            src="/shark.png" // Replace with your logo path
             alt="Minecraft Server Logo"
             width={300}
             height={300}
@@ -120,10 +120,10 @@ const HeroSection = () => {
           className="flex justify-center space-x-6 mb-8"
         >
           {[
-            { icon: FaDiscord, link: "https://discord.gg/kXuMa8cz3G" },
-            { icon: FaTiktok, link: "https://www.tiktok.com/@shocksmpsurvival" },
-            { icon: FaYoutube, link: "https://www.youtube.com/@ShockSMPSurvival" },
-            { icon: FaInstagram, link: "https://www.instagram.com/shock_smp/" },
+            { icon: FaDiscord, link: "https://discord.com/" },
+            { icon: FaTiktok, link: "https://www.tiktok.com/" },
+            { icon: FaYoutube, link: "https://www.youtube.com/" },
+            { icon: FaInstagram, link: "https://www.instagram.com/" },
           ].map((social, index) => (
             <a
               key={index}
@@ -145,7 +145,7 @@ const HeroSection = () => {
           className="bg-blue-800/50 backdrop-blur-md p-4 rounded-xl mx-4"
         >
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-            <span className="text-xl font-mono">mc.shocksmp.com</span>
+            <span className="text-xl font-mono">mc.sharksmp.com</span>
             <button
               onClick={handleCopyIP}
               className="p-2 bg-blue-900 rounded-lg hover:bg-black transition-colors duration-300"
